@@ -6,3 +6,19 @@
 This is my meaningful message 
 
 ![image from github ](https://octodex.github.com/images/yaktocat.png)
+
+```
+import org.apache.spark.sql.functions.{col, lit, udf, when}
+import org.apache.spark.sql.types._
+import org.apache.spark.sql._
+import org.apache.spark.sql.SparkSession
+
+ val spark = SparkSession.builder.
+          master("local[*]").
+          appName("Unmapped Revenue").
+          getOrCreate()
+          spark.sparkContext.setLogLevel("ERROR")
+          spark.conf.set("spark.sql.parquet.int96RebaseModeInRead", "LEGACY")
+          import spark.implicits._
+          
+ ```
